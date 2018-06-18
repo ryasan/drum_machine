@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Display from './components/Display/Display';
+import DrumPad from './components/DrumPad/DrumPad';
 import './App.css';
-
+const drumPads = [
+  { key: 'Q', title: 'clap', audioUrl: './audio/clap-808.wav' },
+  { key: 'W', title: 'hihat', audioUrl: './audio/hihat-808.wav' },
+  { key: 'E', title: 'kick', audioUrl: './audio/kick-808.wav' },
+  { key: 'A', title: 'openhat', audioUrl: './audio/openhat-808.wav' },
+  { key: 'S', title: 'perc', audioUrl: './audio/perc-808.wav' },
+  { key: 'D', title: 'ride acoustic', audioUrl: './audio/ride-acoustic01.wav' },
+  { key: 'Z', title: 'shaker analog', audioUrl: './audio/shaker-analog.wav' },
+  { key: 'X', title: 'snare', audioUrl: './audio/snare-808.wav' },
+  { key: 'C', title: 'tom', audioUrl: './audio/tom-808.wav' }
+];
 class App extends Component {
   render() {
+    const PADS = drumPads.map(pad => (
+      <DrumPad key={pad.key} title={pad.title} audioUrl={pad.audioUrl} />
+    ));
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="drum-machine">
+        <div id="pads">
+          {PADS}
+          </div>
+        <div id="controls">
+          <Display />
+        </div>
       </div>
     );
   }
