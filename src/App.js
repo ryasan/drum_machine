@@ -3,24 +3,36 @@ import Display from './components/Display/Display';
 import DrumPad from './components/DrumPad/DrumPad';
 import './App.css';
 const drumPads = [
-  { key: 'Q', title: 'clap', audioUrl: './audio/clap-808.wav' },
-  { key: 'W', title: 'hihat', audioUrl: './audio/hihat-808.wav' },
-  { key: 'E', title: 'kick', audioUrl: './audio/kick-808.wav' },
-  { key: 'A', title: 'openhat', audioUrl: './audio/openhat-808.wav' },
-  { key: 'S', title: 'perc', audioUrl: './audio/perc-808.wav' },
-  { key: 'D', title: 'ride acoustic', audioUrl: './audio/ride-acoustic01.wav' },
-  { key: 'Z', title: 'shaker analog', audioUrl: './audio/shaker-analog.wav' },
-  { key: 'X', title: 'snare', audioUrl: './audio/snare-808.wav' },
-  { key: 'C', title: 'tom', audioUrl: './audio/tom-808.wav' }
+  {
+    key: 'Q',
+    title: 'clap',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
+  },
+  { key: 'W', title: 'hihat', url: './audio/hihat-808.wav' },
+  { key: 'E', title: 'kick', url: './audio/kick-808.wav' },
+  { key: 'A', title: 'openhat', url: './audio/openhat-808.wav' },
+  { key: 'S', title: 'perc', url: './audio/perc-808.wav' },
+  { key: 'D', title: 'ride acoustic', url: './audio/ride-acoustic01.wav' },
+  { key: 'Z', title: 'shaker analog', url: './audio/shaker-analog.wav' },
+  { key: 'X', title: 'snare', url: './audio/snare-808.wav' },
+  { key: 'C', title: 'tom', url: './audio/tom-808.wav' }
 ];
 class App extends Component {
+  constructor() {
+    super();
+    this.handlePlaySound = this.handlePlaySound.bind(this);
+  }
+
+  handlePlaySound(e) {}
+
   render() {
-    const PADS = drumPads.map((pad,i) => (
+    const PADS = drumPads.map((pad, i) => (
       <DrumPad
         key={i}
         trigger={pad.key}
         title={pad.title}
-        audioUrl={pad.audioUrl}
+        url={pad.url}
+        onPlaySound={this.handlePlaySound}
       />
     ));
 
