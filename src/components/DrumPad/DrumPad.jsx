@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-
+import './DrumPad.css'
 export default class DrumPad extends Component {
+  playSound() {}
+
   render() {
-    const { id, title, audioUrl } = this.props;
+    const { title, trigger, audioUrl } = this.props;
     return (
-      <div id={id} className="drum-pad">
-        {title}
-        <audio src={audioUrl} controls />
+      <div className="drum-pad">
+        {title + ' ' + trigger}
+        <audio src={audioUrl} id={trigger} />
       </div>
     );
   }

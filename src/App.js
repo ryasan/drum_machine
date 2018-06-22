@@ -15,15 +15,18 @@ const drumPads = [
 ];
 class App extends Component {
   render() {
-    const PADS = drumPads.map(pad => (
-      <DrumPad key={pad.key} title={pad.title} audioUrl={pad.audioUrl} />
+    const PADS = drumPads.map((pad,i) => (
+      <DrumPad
+        key={i}
+        trigger={pad.key}
+        title={pad.title}
+        audioUrl={pad.audioUrl}
+      />
     ));
 
     return (
       <div id="drum-machine">
-        <div id="pads">
-          {PADS}
-          </div>
+        <div id="pads">{PADS}</div>
         <div id="controls">
           <Display />
         </div>

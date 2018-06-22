@@ -1,5 +1,11 @@
-.drum-pad {
-  background-color: 'grey';
-  margin-top: 10;
-  box-shadow: '3px 3px 5px black';
+#drum-machine {
+  border: blue 2px solid;
+  padding: 2%;
+  #pads {
+    .drum-pad {
+      width: 7rem;
+      background-color: grey;
+      box-shadow: 3px 3px 5px black;
+    }
+  }
 }
