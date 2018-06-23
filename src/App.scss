@@ -1,10 +1,26 @@
 #drum-machine {
-  border: blue 2px solid;
+  border: gray 2px solid;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 800px;
   padding: 2%;
-  #pads {
+  margin: 10% auto 0 auto;
+  box-shadow: 3px 4px 5px gray;
+  #drum-pad-bank {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     .drum-pad {
-      width: 7rem;
-      border: red 2px solid;
+      border-radius: 10px;
+      width: 90%;
+      margin-bottom: 10px;
+      background-color: grey;
+      box-shadow: 3px 4px 5px black;
+      text-align: center;
+      line-height: 100px;
     }
+  }
+  #controls {
+    border: gray 2px solid;
   }
 }
