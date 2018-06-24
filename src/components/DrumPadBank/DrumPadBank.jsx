@@ -1,15 +1,15 @@
-import React, { Component, Fragment } from 'react';
-import DrumPadItem from './../DrumPadItem/DrumPadItem';
+import React, { Component } from 'react';
+import DrumPad from './DrumPad';
 import { DRUMPADS } from './DrumPads';
-
+import './DrumPadBank.css';
 export default class DrumPadBank extends Component {
   render() {
     return (
-      <Fragment>
+      <div className="drum-pad-bank">
         {DRUMPADS.map(drumPad => (
-          <DrumPadItem key={drumPad.keyTrigger} drumPad={drumPad} />
+          <DrumPad key={drumPad.keyTrigger} drumPad={drumPad} />
         ))}
-      </Fragment>
+      </div>
     );
   }
 }

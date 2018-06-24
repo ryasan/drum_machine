@@ -1,0 +1,21 @@
+.controller-container {
+  border: gray 2px solid;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 40% auto 40%;
+  .row {
+    &.switch-container {
+    }
+    &.display-container {
+      #display {
+        margin: 10% auto 0 auto;
+        width: 70%;
+        background-color: rgba(128, 128, 128, 0.671);
+        font-family: digitalFont;
+        // font-weight: bold;
+      }
+    }
+    & .volume-container {
+    }
+  }
+}

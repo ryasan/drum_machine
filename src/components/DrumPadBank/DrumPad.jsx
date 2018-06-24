@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class DrumPadItem extends Component {
+export default class DrumPad extends Component {
   playSound(id) {
     const sound = document.getElementById(id);
     sound.currentTime = 0;
