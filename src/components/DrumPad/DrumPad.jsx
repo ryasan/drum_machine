@@ -8,6 +8,10 @@ class DrumPad extends Component {
     const sound = document.getElementById(id);
     sound.currentTime = 0;
     sound.play();
+    this.showSound(title);
+  }
+
+  showSound(title) {
     this.props.displaySoundAction(title);
   }
 
