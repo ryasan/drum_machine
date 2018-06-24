@@ -1,9 +1,5 @@
-$main_background: #85929e;
+$main_background: #abb2b9;
 $dark: #17202a;
-
-@mixin border-color {
-  border: $dark 2px solid;
-}
 
 .wrap {
   width: 1000px;
@@ -22,7 +18,7 @@ $dark: #17202a;
   display: grid;
   grid-template-columns: 2fr 1fr;
   padding: 2%;
-  @include border-color();
+  z-index: 3;
   background-color: $main_background;
   .drum-pad-bank {
     padding: 3%;
@@ -43,7 +39,6 @@ $dark: #17202a;
     text-align: center;
     display: grid;
     grid-template-rows: 35% 30% 35%;
-    @include border-color();
     .row {
       position: relative;
       &.switch-container {
@@ -58,8 +53,9 @@ $dark: #17202a;
           margin: 15% auto;
           width: 70%;
           line-height: 30px;
-          background-color: rgba(128, 128, 128, 0.671);
+          background-color: white;
           font-family: digitalFont;
+          font-weight: bold;
         }
       }
       &.volume-container {
@@ -74,28 +70,27 @@ $dark: #17202a;
 
 .bottom {
   grid-area: bottom;
-  height: 28px;
-  margin-left: 1.8%;
-  width: 100.1%;
-  -webkit-transform: skew(45deg);
-  -moz-transform: skew(45deg);
-  -o-transform: skew(45deg);
-  @include border-color();
-  border-top: none;
-  background-color: darken($main_background, 28%);
+  height: 30px;
+  width: 100.3%;
+  position: relative;
+  top: -1px;
+  left: 16.8px;
+  z-index: 2;
+  -webkit-transform: skew(49deg);
+  -moz-transform: skew(49deg);
+  -o-transform: skew(49deg);
+  border-right: darken($main_background, 47%) 5px solid;
+  background-color: darken($main_background, 35%);
 }
 
 .side {
   grid-area: side;
-  width: 29px;
-  height: 93%;
+  width: 36px;
+  height: 92.8%;
   position: relative;
-  top: 14.8px;
-  -webkit-transform: skewY(45deg);
-  -moz-transform: skewY(45deg);
-  -o-transform: skewY(45deg);
-  @include border-color();
-  border-left: none;
-  border-bottom: none;
-  background-color: darken($main_background, 28%);
+  top: 14.9px;
+  -webkit-transform: skewY(40deg);
+  -moz-transform: skewY(40deg);
+  -o-transform: skewY(40deg);
+  background-color: darken($main_background, 35%);
 }
