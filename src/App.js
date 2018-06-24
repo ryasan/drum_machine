@@ -6,9 +6,13 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div id="drum-machine">
-        <DrumPadBank />
-        <Controller />
+      <div className="wrap">
+        <div id="drum-machine">
+          <DrumPadBank />
+          <Controller />
+        </div>
+        <div className="side" />
+        <div className="bottom" />
       </div>
     );
   }
