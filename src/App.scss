@@ -7,3 +7,51 @@
   margin: 10% auto 0 auto;
   box-shadow: 3px 4px 5px gray;
 }
+
+.drum-pad-bank {
+  padding: 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .drum-pad {
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    background-color: grey;
+    box-shadow: 3px 4px 5px black;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+  }
+}
+
+.controller-container {
+  border: gray 2px solid;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 35% 30% 35%;
+  .row {
+    position: relative;
+    &.switch-container {
+      .switch {
+        position: absolute;
+        bottom: 15%;
+        left: 35%;
+      }
+    }
+    &.display-container {
+      #display {
+        margin: 15% auto;
+        width: 70%;
+        line-height: 30px;
+        background-color: rgba(128, 128, 128, 0.671);
+        font-family: digitalFont;
+      }
+    }
+    &.volume-container {
+      .range {
+        position: relative;
+        top: 15%;
+      }
+    }
+  }
+}

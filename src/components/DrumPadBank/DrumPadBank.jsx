@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import DrumPad from './DrumPad';
+import DrumPad from './../DrumPad/DrumPad';
 import { DRUMPADS } from './DrumPads';
-import './DrumPadBank.css';
+
 export default class DrumPadBank extends Component {
   render() {
     return (
