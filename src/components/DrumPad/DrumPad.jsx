@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { displaySoundAction } from './../../store';
 
-class DrumPad extends Component {
-  playSound(id, title) {
-    const sound = document.getElementById(id);
-    sound.currentTime = 0;
-    sound.play();
-    this.showSound(title);
-  }
-
-  showSound(title) {
-    this.props.displaySoundAction(title);
-  }
-
+export default class DrumPad extends Component {
   render() {
     const { title, keyTrigger, url } = this.props.drumPad;
+    const classes = this.props.activePad === keyTrigger ? 'drum-pad active' : 'drum-pad';
     return (
-      <div className="drum-pad" onClick={() => this.playSound(keyTrigger, title)}>
+      <div
+        className={classes}
+        onClick={() => this.props.onPlaySound(keyTrigger, title)}
+      >
         {keyTrigger}
         <audio id={keyTrigger} className="clip">
           <source src={url} type="audio/wav" />
@@ -27,12 +17,3 @@ class DrumPad extends Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ displaySoundAction }, dispatch);
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(DrumPad);

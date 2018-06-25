@@ -24,6 +24,7 @@ $dark: #17202a;
     padding: 3%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    outline: none;
     .drum-pad {
       border-radius: 10px;
       width: 90%;
@@ -33,6 +34,10 @@ $dark: #17202a;
       text-align: center;
       line-height: 100px;
       font-weight: bold;
+      &.active {
+        background-color: red;
+        transform: translateY(4px)
+      }
     }
   }
   .controller-container {

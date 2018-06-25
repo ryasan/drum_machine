@@ -48,3 +48,15 @@ export const DRUMPADS = [
     url: 'https://s3-us-west-1.amazonaws.com/drum-machine-sounds/tom-808.wav'
   }
 ];
+
+export const DRUMCODES = {
+  Q: 'clap',
+  W: 'hihat',
+  E: 'kick',
+  A: 'openhat',
+  S: 'perc',
+  D: 'ride acoustic',
+  Z: 'shaker analog',
+  X: 'snare',
+  C: 'tom'
+};
