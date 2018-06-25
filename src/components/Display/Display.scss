@@ -1,0 +1,10 @@
+@import './../../_variables.scss';
+
+#display {
+  margin: 15% auto;
+  width: 70%;
+  line-height: 30px;
+  background-color: $light;
+  font-family: digitalFont;
+  font-weight: bold;
+}
