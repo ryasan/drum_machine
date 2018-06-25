@@ -1,0 +1,8 @@
+.controller-container {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 35% 30% 35%;
+  .row {
+    position: relative;
+  }
+}

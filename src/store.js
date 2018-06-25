@@ -8,8 +8,15 @@ const displaySoundAction = soundTitle => {
   };
 };
 
+const powerOnAction = powerOn => {
+  return {
+    type: 'POWER_ON',
+    payload: powerOn
+  };
+};
+
 // reducers
-const soundDisplayReducer = (state = null, action) => {
+const soundDisplayReducer = (state = 'ON', action) => {
   switch (action.type) {
     case 'SOUND_DISPLAY':
       return action.payload;
@@ -18,11 +25,21 @@ const soundDisplayReducer = (state = null, action) => {
   }
 };
 
+const powerOnReducer = (state = true, action) => {
+  switch (action.type) {
+    case 'POWER_ON':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 // store
 const allReducers = combineReducers({
-  soundDisplay: soundDisplayReducer
+  soundDisplay: soundDisplayReducer,
+  powerOn: powerOnReducer
 });
 
 const store = createStore(allReducers);
 
-export { store, displaySoundAction };
+export { store, displaySoundAction, powerOnAction };

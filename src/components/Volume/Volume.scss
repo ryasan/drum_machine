@@ -1,0 +1,21 @@
+@import './../../_variables.scss';
+
+.volume-container {
+  position: relative;
+  .slider {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    -webkit-appearance: none;
+    height: 5px;
+    outline: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 10px;
+      height: 25px;
+      background-color: $primary;
+    }
+  }
+}

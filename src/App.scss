@@ -11,74 +11,46 @@
   grid-template-areas:
     'drum-machine side'
     'bottom side';
-}
 
-#drum-machine {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  padding: 2%;
-  z-index: 3;
-  background-color: $main_background;
-  .drum-pad-bank {
-    padding: 3%;
+  #drum-machine {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    outline: none;
-    .drum-pad {
-      border-radius: 10px;
-      width: 90%;
-      margin-bottom: 10px;
-      background-color: rgb(238, 238, 238);
-      box-shadow: 3px 7px 5px #273746;
-      text-align: center;
-      line-height: 100px;
-      font-weight: bold;
-      &.active {
-        background-color: $primary;
-        transform: translateY(4px);
-        box-shadow: 3px 3px 5px black;
-      }
-    }
+    grid-template-columns: 2fr 1fr;
+    padding: 2%;
+    z-index: 3;
+    background-color: $main_background;
   }
-  .controller-container {
-    text-align: center;
-    display: grid;
-    grid-template-rows: 35% 30% 35%;
-    .row {
-      position: relative;
-      &.volume-container {
-        .range {
-          position: relative;
-          top: 15%;
-        }
-      }
-    }
+
+  .bottom {
+    grid-area: bottom;
+    height: 30px;
+    width: 100.3%;
+    position: relative;
+    top: -1px;
+    left: 16.8px;
+    z-index: 2;
+    -webkit-transform: skew(49deg);
+    -moz-transform: skew(49deg);
+    -o-transform: skew(49deg);
+    border-right: darken($main_background, 47%) 5px solid;
+    background-color: darken($main_background, 35%);
+  }
+
+  .side {
+    grid-area: side;
+    width: 36px;
+    height: 92.8%;
+    position: relative;
+    top: 14.9px;
+    -webkit-transform: skewY(40deg);
+    -moz-transform: skewY(40deg);
+    -o-transform: skewY(40deg);
+    background-color: darken($main_background, 35%);
   }
 }
 
-.bottom {
-  grid-area: bottom;
-  height: 30px;
-  width: 100.3%;
-  position: relative;
-  top: -1px;
-  left: 16.8px;
-  z-index: 2;
-  -webkit-transform: skew(49deg);
-  -moz-transform: skew(49deg);
-  -o-transform: skew(49deg);
-  border-right: darken($main_background, 47%) 5px solid;
-  background-color: darken($main_background, 35%);
-}
-
-.side {
-  grid-area: side;
-  width: 36px;
-  height: 92.8%;
-  position: relative;
-  top: 14.9px;
-  -webkit-transform: skewY(40deg);
-  -moz-transform: skewY(40deg);
-  -o-transform: skewY(40deg);
-  background-color: darken($main_background, 35%);
+@media screen and (max-width: 650px) {
+  .wrap {
+    transform: scale(0.8);
+    margin: 0;
+  }
 }

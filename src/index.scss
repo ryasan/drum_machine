@@ -8,5 +8,12 @@
 }
 
 body {
-  overflow: hidden;
+  background-color: #abebc6;
+  font-size: 1.5em;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
